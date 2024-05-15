@@ -19,6 +19,7 @@ class _HomePageState extends State<HomePage> {
         foregroundColor: Colors.white,
         title: const Text('ExpoCrato 2024'),
       ),
+      drawer: const Drawer(),
       body: ListView.builder(
         itemCount: listAttractions.length,
         itemBuilder: (context, index) {
