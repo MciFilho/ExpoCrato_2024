@@ -35,7 +35,27 @@ class _HomePageState extends State<HomePage> {
                   .toList(),
             ),
             leading: CircleAvatar(
-              child: Text('${listAttractions[index].day}'),
+              radius: 45.0,
+              backgroundColor: Color.fromARGB(255, 145, 107, 206),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    '${listAttractions[index].day}',
+                    style: const TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.yellow,
+                    ),
+                  ),
+                  Text(
+                    listAttractions[index].sowingDay,
+                    style: const TextStyle(
+                      fontSize: 16.0,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
             ),
             trailing: IconButton(
               onPressed: () {
