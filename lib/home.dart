@@ -1,4 +1,4 @@
-import 'package:expocrato_2024/attraction.dart';
+import 'package:expocrato_2024/attractions.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -9,13 +9,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<Attraction> _listFavorite = [];
+  final List<Attractions> _listFavorite = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 63, 33, 197),
+        backgroundColor: const Color.fromARGB(255, 63, 33, 197),
         foregroundColor: Colors.white,
         title: const Text('ExpoCrato 2024'),
       ),
@@ -25,18 +25,15 @@ class _HomePageState extends State<HomePage> {
         itemBuilder: (context, index) {
           final isFavorite = _listFavorite.contains(listAttractions[index]);
           return ListTile(
-            title: Text(listAttractions[index].name),
-            subtitle: Wrap(
-              spacing: 8,
-              runSpacing: 4,
-              children: listAttractions[index]
-                  .tags
-                  .map((tag) => Chip(label: Text('#$tag')))
-                  .toList(),
+            onTap: () {},
+            title: Text(
+              listAttractions[index].atrationsName,
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
             ),
             leading: CircleAvatar(
               radius: 45.0,
-              backgroundColor: Color.fromARGB(255, 145, 107, 206),
+              backgroundColor: const Color.fromARGB(255, 145, 107, 206),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
